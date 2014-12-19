@@ -1,0 +1,48 @@
+﻿<Window x:Class="SharpPad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="#Pad" Height="350" Width="525" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
+    <Grid>
+        <RichTextBox x:Name="TextBlock1"  Margin="0,22,0,0" TextChanged="TextBlock1_TextChanged" FontFamily="Consolas" IsDocumentEnabled="True" ScrollViewer.VerticalScrollBarVisibility="Visible" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" OpacityMask="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" SelectionBrush="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" BorderThickness="2">
+            <FlowDocument>
+                <Paragraph/>
+            </FlowDocument>
+        </RichTextBox>
+        <Menu Height="22" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+            <MenuItem x:Name="fileButton" Header="File">
+                <MenuItem x:Name="newButton" Header="New" Click="newButton_Click"/>
+                <Separator/>
+                <MenuItem x:Name="openButton" Header="Open..." Click="openButton_Click"/>
+                <MenuItem x:Name="saveButton" Header="Save" Click="saveButton_Click"/>
+                <MenuItem x:Name="saveAsButton" Header="Save As..." Click="saveAsButton_Click"/>
+                <Separator/>
+                <MenuItem x:Name="printButton" Header="Print..." Click="printButton_Click"   />
+                <MenuItem x:Name="printPreviewButton" Header="Print Preview..." Click="printPreviewButton_Click"  />
+                <MenuItem x:Name="exitButton" Header="Exit" Click="exitAsButton_Click" />
+            </MenuItem>
+            <MenuItem x:Name="editButton" Header="Edit">
+                <MenuItem x:Name="undoButton" Header="Undo" Command="ApplicationCommands.Undo"/>
+                <Separator/>
+                <MenuItem x:Name="copyButton" Header="Copy" Command="ApplicationCommands.Copy"/>
+                <MenuItem x:Name="pasteButton" Header="Paste" Command="ApplicationCommands.Paste"/>
+                <MenuItem x:Name="cutButton" Header="Cut" Command="ApplicationCommands.Cut"/>
+                <Separator/>
+                <MenuItem x:Name="selectAllButton" Header="Select All" Command="ApplicationCommands.SelectAll"/>
+                <Separator/>
+                <MenuItem x:Name="redoButton" Header="Redo" Command="ApplicationCommands.Redo"/>
+            </MenuItem>
+
+            <MenuItem x:Name="formatButton" Header="Format">
+                <MenuItem x:Name="fontWrapButton" Header="Font"/>
+            </MenuItem>
+            <MenuItem x:Name="viewButton" Header="View">
+                <MenuItem x:Name="zoomInButton" Header="Zoom In" Click="zoomInButton_Click_1"/>
+                <MenuItem x:Name="ZoomOutButton" Header="Zoom Out" Click="ZoomOutButton_Click_1"/>
+            </MenuItem>
+            <MenuItem x:Name="helpButton" Header="Help">
+                <MenuItem x:Name="aboutButton" Header="About #Pad" Click="aboutButton_Click"/>
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</Window>
